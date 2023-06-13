@@ -2,26 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input,
+textarea {
+	@apply border-2 border-secondary-shade rounded-md px-1 py-1 bg-primary-beige w-full mb-4;
+}
+input:focus,
+textarea:focus {
+	@apply border-primary-body rounded-md text-primary-body  px-1 py-1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+h1 {
+	@apply text-xl mb-4;
+}
+h2 {
+	@apply text-lg;
+}
+table.basic {
+	@apply w-full;
+}
+table.basic thead tr td {
+	@apply text-primary-beige bg-secondary-shade;
+}
+table.basic tr td {
+	@apply border p-0.5 border-primary-body text-secondary-shade;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.btn-red {
+	@apply bg-secondary-red text-white px-4 py-1 rounded-md;
+}
+.btn-green {
+	@apply bg-secondary-green text-white px-4 py-1 rounded-md;
+}
+
+label {
+	@apply text-primary-body font-semibold;
 }
